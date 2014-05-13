@@ -1,61 +1,58 @@
-<!DOCTYPE html>
 <html>
   <head>
     <title>RPi Cam Control</title>
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="caduceus.css" />
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="script.js"></script>
   </head>
   <body onload="setTimeout('init();', 100);">
-    <center>
-      <h1>RPi Cam Control</h1>
+  
+  <header>
+	  <div id="header-spacing">
+	  <h1>TEAM CADUCEUS - <span class="slogan">RPI Surveillance</span></h1>
+	  </div>
+  </header>
+  
+  <div id="wrap">
+  
+  <article>
       <div><img id="mjpeg_dest"></div>
-      <input id="video_button" type="button">
-      <input id="image_button" type="button">
-      <input id="timelapse_button" type="button">
-      <input id="md_button" type="button">
-      <input id="halt_button" type="button">
+      <input id="video_button" type="button" class="button1" >
+      <input id="image_button" type="button" class="button1" >
+      <input id="timelapse_button" type="button" class="button1" >
+      <input id="md_button" type="button" class="button1" >
+      <input id="halt_button" type="button" class="button1" >
       <p><a href="preview.php">Download Videos and Images</a></p>
-      <h2>Settings</h2>
-      <table border=1 width=650>
-        <tr>
-          <td>Resolutions:</td>
-          <td>
-            Load Preset: <select onclick="set_preset(this.value)">
-              <option value="1920 1080 25 25 2592 1944">Select option...</option>
-              <option value="1920 1080 25 25 2592 1944">Std FOV</option>
-              <option value="1296 0730 25 25 2592 1944">16:9 wide FOV</option>
-              <option value="1296 0976 25 25 2592 1944">4:3 full FOV</option>
-              <option value="1920 1080 01 30 2592 1944">Std FOV, x30 Timelapse</option>
-            </select><br>
-            Custom Values:<br>
-            Video res: <input type="text" size=4 id="video_width">x<input type="text" size=4 id="video_height">px<br>
-            Video fps: <input type="text" size=2 id="video_fps">recording, <input type="text" size=2 id="MP4Box_fps">boxing<br>
-            Image res: <input type="text" size=4 id="image_width">x<input type="text" size=4 id="image_height">px<br>
-            <input type="button" value="OK" onclick="set_res();">
-          </td>
-        </tr>
+   </article>  
+	
+  <article>	
+	  <div id="heading">
+	  <h2>Settings</h2>
+	  </div>
+	  <table border="0" width="880">
         <tr>
           <td>Timelapse-Interval (0.1...3200):</td>
-          <td><input type="text" size=4 id="tl_interval" value="3">s</td>
+          <td><input type="text" size=4 id="tl_interval" value="3"> s</td>
         </tr>
         <tr>
           <td>Sharpness (-100...100), default 0:</td>
-          <td><input type="text" size=4 id="sharpness"><input type="button" value="OK" onclick="send_cmd('sh ' + document.getElementById('sharpness').value)"></td>
+          <td><input type="text" size=4 id="sharpness"><input type="button" class="button1"  value="OK" onclick="send_cmd('sh ' + document.getElementById('sharpness').value)"></td>
         </tr>
         <tr>
           <td>Contrast (-100...100), default 0:</td>
-          <td><input type="text" size=4 id="contrast"><input type="button" value="OK" onclick="send_cmd('co ' + document.getElementById('contrast').value)"></td>
+          <td><input type="text" size=4 id="contrast"><input type="button" class="button1"  value="OK" onclick="send_cmd('co ' + document.getElementById('contrast').value)"></td>
         </tr>
         <tr>
           <td>Brightness (0...100), default 50:</td>
-          <td><input type="text" size=4 id="brightness"><input type="button" value="OK" onclick="send_cmd('br ' + document.getElementById('brightness').value)"></td>
+          <td><input type="text" size=4 id="brightness"><input type="button" class="button1"  value="OK" onclick="send_cmd('br ' + document.getElementById('brightness').value)"></td>
         </tr>
         <tr>
           <td>Saturation (-100...100), default 0:</td>
-          <td><input type="text" size=4 id="saturation"><input type="button" value="OK" onclick="send_cmd('sa ' + document.getElementById('saturation').value)"></td>
+          <td><input type="text" size=4 id="saturation"><input type="button" class="button1"  value="OK" onclick="send_cmd('sa ' + document.getElementById('saturation').value)"></td>
         </tr>
         <tr>
           <td>ISO (100...800), default 0:</td>
-          <td><input type="text" size=4 id="iso"><input type="button" value="OK" onclick="send_cmd('is ' + document.getElementById('iso').value)"></td>
+          <td><input type="text" size=4 id="iso"><input type="button" class="button1"  value="OK" onclick="send_cmd('is ' + document.getElementById('iso').value)"></td>
         </tr>
         <tr>
           <td>Metering Mode, default 'average':</td>
@@ -71,11 +68,11 @@
         </tr>
         <tr>
           <td>Video Stabilisation, default: 'off'</td>
-          <td><input type="button" value="ON" onclick="send_cmd('vs 1')"><input type="button" value="OFF" onclick="send_cmd('vs 0')"></td>
+          <td><input type="button" class="button1"  value="ON" onclick="send_cmd('vs 1')"><input type="button" class="button1"  value="OFF" onclick="send_cmd('vs 0')"></td>
         </tr>
         <tr>
           <td>Exposure Compensation (-10...10), default 0:</td>
-          <td><input type="text" size=4 id="comp"><input type="button" value="OK" onclick="send_cmd('ec ' + document.getElementById('comp').value)"></td>
+          <td><input type="text" size=4 id="comp"><input type="button" class="button1"  value="OK" onclick="send_cmd('ec ' + document.getElementById('comp').value)"></td>
         </tr>
         <tr>
           <td>Exposure Mode, default 'auto':</td>
@@ -150,7 +147,7 @@
               <option value="1">Enabled</option>
             </select>
             u:v = <input type="text" size=3 id="ce_u">:<input type="text" size=3 id="ce_v">
-            <input type="button" value="OK" onclick="set_ce();">
+            <input type="button" class="button1"  value="OK" onclick="set_ce();">
           </td>
         </tr>
         <tr>
@@ -180,26 +177,29 @@
         <tr>
           <td>Sensor Region, default 0/0/65536/65536:</td>
           <td>
-            x<input type="text" size=5 id="roi_x"> y<input type="text" size=5 id="roi_y"> w<input type="text" size=5 id="roi_w"> h<input type="text" size=5 id="roi_h"> <input type="button" value="OK" onclick="set_roi();">
+            x<input type="text" size=5 id="roi_x"> y<input type="text" size=5 id="roi_y"> w<input type="text" size=5 id="roi_w"> h<input type="text" size=5 id="roi_h"> <input type="button" class="button1"  value="OK" onclick="set_roi();">
           </td>
         </tr>
         <tr>
           <td>Shutter speed (0...330000), default 0:</td>
-          <td><input type="text" size=4 id="shutter_speed"><input type="button" value="OK" onclick="send_cmd('ss ' + document.getElementById('shutter_speed').value)"></td>
+          <td><input type="text" size=4 id="shutter_speed"><input type="button" class="button1"  value="OK" onclick="send_cmd('ss ' + document.getElementById('shutter_speed').value)"></td>
         </tr>
         <tr>
           <td>Image quality (0...100), default 85:</td>
-          <td><input type="text" size=4 id="quality"><input type="button" value="OK" onclick="send_cmd('qu ' + document.getElementById('quality').value)"></td>
+          <td><input type="text" size=4 id="quality"><input type="button" class="button1"  value="OK" onclick="send_cmd('qu ' + document.getElementById('quality').value)"></td>
         </tr>
         <tr>
           <td>Raw Layer, default: 'off'</td>
-          <td><input type="button" value="ON" onclick="send_cmd('rl 1')"><input type="button" value="OFF" onclick="send_cmd('rl 0')"></td>
+          <td><input type="button" class="button1"  value="ON" onclick="send_cmd('rl 1')"><input type="button" class="button1"  value="OFF" onclick="send_cmd('rl 0')"></td>
         </tr>
         <tr>
           <td>Video bitrate (0...25000000), default 17000000:</td>
-          <td><input type="text" size=10 id="bitrate"><input type="button" value="OK" onclick="send_cmd('bi ' + document.getElementById('bitrate').value)"></td>
+          <td><input type="text" size=10 id="bitrate"><input type="button" class="button1"  value="OK" onclick="send_cmd('bi ' + document.getElementById('bitrate').value)"></td>
         </tr>
       </table>
-    </center>
-  </body>
+		  </article>
+		  
+
+</div>
+</body>
 </html>
