@@ -1,20 +1,5 @@
-<html>
-  <head>
-    <title>RPi Cam Control</title>
-    <link rel="stylesheet" href="caduceus.css" />
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
-	<script type="text/javascript" src="script.js"></script>
-  </head>
-  <body onload="setTimeout('init();', 100);">
-  
-  <header>
-	  <div id="header-spacing">
-	  <h1>TEAM CADUCEUS - <span class="slogan">RPI Surveillance</span></h1>
-	  </div>
-  </header>
-  
-  <div id="wrap">
-  
+<?php include 'header.php'; ?>
+
   <article>
       <div><img id="mjpeg_dest"></div>
       <input id="video_button" type="button" class="button1" >
@@ -22,14 +7,13 @@
       <input id="timelapse_button" type="button" class="button1" >
       <input id="md_button" type="button" class="button1" >
       <input id="halt_button" type="button" class="button1" >
-      <p><a href="preview.php">Download Videos and Images</a></p>
    </article>  
 	
   <article>	
 	  <div id="heading">
 	  <h2>Settings</h2>
 	  </div>
-	  <table border="0" width="880">
+	  <table border="0" width="780">
         <tr>
           <td>Timelapse-Interval (0.1...3200):</td>
           <td><input type="text" size=4 id="tl_interval" value="3"> s</td>
@@ -198,8 +182,4 @@
         </tr>
       </table>
 		  </article>
-		  
-
-</div>
-</body>
-</html>
+	  <?php include 'footer.php'; ?>
