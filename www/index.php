@@ -1,5 +1,6 @@
 <?php include 'header.php'; ?>
-
+  
+  <div id="wrap">
   <article>
       <div><img id="mjpeg_dest"></div>
       <input id="video_button" type="button" class="button1" >
@@ -182,4 +183,4 @@
         </tr>
       </table>
 		  </article>
-	  <?php include 'footer.php'; ?>
+<?php include 'footer.php'; ?>
