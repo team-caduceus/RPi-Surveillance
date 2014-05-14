@@ -20,27 +20,27 @@
           <td><input type="text" size=4 id="tl_interval" value="3"> s</td>
         </tr>
         <tr>
-          <td>Sharpness (-100...100), default 0:</td>
-          <td><input type="text" size=4 id="sharpness"><input type="button" class="button1"  value="OK" onclick="send_cmd('sh ' + document.getElementById('sharpness').value)"></td>
+          <td>Sharpness (-100...100), <span class="default">default 0</span>:</td>
+          <td><input type="text" size=4 id="sharpness"><input type="button" class="button2"  value="OK" onclick="send_cmd('sh ' + document.getElementById('sharpness').value)"></td>
         </tr>
         <tr>
-          <td>Contrast (-100...100), default 0:</td>
-          <td><input type="text" size=4 id="contrast"><input type="button" class="button1"  value="OK" onclick="send_cmd('co ' + document.getElementById('contrast').value)"></td>
+          <td>Contrast (-100...100), <span class="default">default 0</span>:</td>
+          <td><input type="text" size=4 id="contrast"><input type="button" class="button2"  value="OK" onclick="send_cmd('co ' + document.getElementById('contrast').value)"></td>
         </tr>
         <tr>
-          <td>Brightness (0...100), default 50:</td>
-          <td><input type="text" size=4 id="brightness"><input type="button" class="button1"  value="OK" onclick="send_cmd('br ' + document.getElementById('brightness').value)"></td>
+          <td>Brightness (0...100), <span class="default">default 50</span>:</td>
+          <td><input type="text" size=4 id="brightness"><input type="button" class="button2"  value="OK" onclick="send_cmd('br ' + document.getElementById('brightness').value)"></td>
         </tr>
         <tr>
-          <td>Saturation (-100...100), default 0:</td>
-          <td><input type="text" size=4 id="saturation"><input type="button" class="button1"  value="OK" onclick="send_cmd('sa ' + document.getElementById('saturation').value)"></td>
+          <td>Saturation (-100...100), <span class="default">default 0</span>:</td>
+          <td><input type="text" size=4 id="saturation"><input type="button" class="button2"  value="OK" onclick="send_cmd('sa ' + document.getElementById('saturation').value)"></td>
         </tr>
         <tr>
-          <td>ISO (100...800), default 0:</td>
-          <td><input type="text" size=4 id="iso"><input type="button" class="button1"  value="OK" onclick="send_cmd('is ' + document.getElementById('iso').value)"></td>
+          <td>ISO (100...800), <span class="default">default 0</span>:</td>
+          <td><input type="text" size=4 id="iso"><input type="button" class="button2"  value="OK" onclick="send_cmd('is ' + document.getElementById('iso').value)"></td>
         </tr>
         <tr>
-          <td>Metering Mode, default 'average':</td>
+          <td>Metering Mode, <span class="default">default 'average'</span>:</td>
           <td>
             <select onclick="send_cmd('mm ' + this.value)">
               <option value="average">Select option...</option>
@@ -52,15 +52,15 @@
           </td>
         </tr>
         <tr>
-          <td>Video Stabilisation, default: 'off'</td>
-          <td><input type="button" class="button1"  value="ON" onclick="send_cmd('vs 1')"><input type="button" class="button1"  value="OFF" onclick="send_cmd('vs 0')"></td>
+          <td>Video Stabilisation, <span class="default">default: 'off'</span></td>
+          <td><input type="button" class="button2"  value="ON" onclick="send_cmd('vs 1')"><input type="button" class="button2"  value="OFF" onclick="send_cmd('vs 0')"></td>
         </tr>
         <tr>
-          <td>Exposure Compensation (-10...10), default 0:</td>
-          <td><input type="text" size=4 id="comp"><input type="button" class="button1"  value="OK" onclick="send_cmd('ec ' + document.getElementById('comp').value)"></td>
+          <td>Exposure Compensation (-10...10), <span class="default">default 0</span>:</td>
+          <td><input type="text" size=4 id="comp"><input type="button" class="button2"  value="OK" onclick="send_cmd('ec ' + document.getElementById('comp').value)"></td>
         </tr>
         <tr>
-          <td>Exposure Mode, default 'auto':</td>
+          <td>Exposure Mode, <span class="default">default 'auto'</span>:</td>
           <td>
             <select onclick="send_cmd('em ' + this.value)">
               <option value="auto">Select option...</option>
@@ -79,7 +79,7 @@
           </td>
         </tr>
         <tr>
-          <td>White Balance, default 'auto':</td>
+          <td>White Balance, <span class="default">default 'auto'</span>:</td>
           <td>
             <select onclick="send_cmd('wb ' + this.value)">
               <option value="auto">Select option...</option>
@@ -97,7 +97,7 @@
           </td>
         </tr>
         <tr>
-          <td>Image Effect, default 'none':</td>
+          <td>Image Effect, <span class="default">default 'none'</span>:</td>
           <td>
             <select onclick="send_cmd('ie ' + this.value)">
               <option value="none">Select option...</option>
@@ -125,18 +125,18 @@
           </td>
         </tr>
         <tr>
-          <td>Colour Effect, default 'disabled':</td>
+          <td>Colour Effect, <span class="default">default 'disabled'</span>:</td>
           <td>
             <select id="ce_en">
               <option value="0">Disabled</option>
               <option value="1">Enabled</option>
             </select>
             u:v = <input type="text" size=3 id="ce_u">:<input type="text" size=3 id="ce_v">
-            <input type="button" class="button1"  value="OK" onclick="set_ce();">
+            <input type="button" class="button2"  value="OK" onclick="set_ce();">
           </td>
         </tr>
         <tr>
-          <td>Rotation, default 0:</td>
+          <td>Rotation, <span class="default">default 0</span>:</td>
           <td>
             <select onclick="send_cmd('ro ' + this.value)">
               <option value="0">Select option...</option>
@@ -148,7 +148,7 @@
           </td>
         </tr>
         <tr>
-          <td>Flip, default 'none':</td>
+          <td>Flip, <span class="default">default 'none'</span>:</td>
           <td>
             <select onclick="send_cmd('fl ' + this.value)">
               <option value="0">Select option...</option>
@@ -160,26 +160,26 @@
           </td>
         </tr>
         <tr>
-          <td>Sensor Region, default 0/0/65536/65536:</td>
+          <td>Sensor Region, <span class="default">default 0/0/65536/65536</span>:</td>
           <td>
-            x<input type="text" size=5 id="roi_x"> y<input type="text" size=5 id="roi_y"> w<input type="text" size=5 id="roi_w"> h<input type="text" size=5 id="roi_h"> <input type="button" class="button1"  value="OK" onclick="set_roi();">
+            x<input type="text" size=5 id="roi_x"> y<input type="text" size=5 id="roi_y"> w<input type="text" size=5 id="roi_w"> h<input type="text" size=5 id="roi_h"> <input type="button" class="button2"  value="OK" onclick="set_roi();">
           </td>
         </tr>
         <tr>
-          <td>Shutter speed (0...330000), default 0:</td>
-          <td><input type="text" size=4 id="shutter_speed"><input type="button" class="button1"  value="OK" onclick="send_cmd('ss ' + document.getElementById('shutter_speed').value)"></td>
+          <td>Shutter speed (0...330000), <span class="default">default 0</span>:</td>
+          <td><input type="text" size=4 id="shutter_speed"><input type="button" class="button2"  value="OK" onclick="send_cmd('ss ' + document.getElementById('shutter_speed').value)"></td>
         </tr>
         <tr>
-          <td>Image quality (0...100), default 85:</td>
-          <td><input type="text" size=4 id="quality"><input type="button" class="button1"  value="OK" onclick="send_cmd('qu ' + document.getElementById('quality').value)"></td>
+          <td>Image quality (0...100), <span class="default">default 85</span>:</td>
+          <td><input type="text" size=4 id="quality"><input type="button" class="button2"  value="OK" onclick="send_cmd('qu ' + document.getElementById('quality').value)"></td>
         </tr>
         <tr>
-          <td>Raw Layer, default: 'off'</td>
-          <td><input type="button" class="button1"  value="ON" onclick="send_cmd('rl 1')"><input type="button" class="button1"  value="OFF" onclick="send_cmd('rl 0')"></td>
+          <td>Raw Layer, <span class="default">default: 'off'</span></td>
+          <td><input type="button" class="button2"  value="ON" onclick="send_cmd('rl 1')"><input type="button" class="button2"  value="OFF" onclick="send_cmd('rl 0')"></td>
         </tr>
         <tr>
-          <td>Video bitrate (0...25000000), default 17000000:</td>
-          <td><input type="text" size=10 id="bitrate"><input type="button" class="button1"  value="OK" onclick="send_cmd('bi ' + document.getElementById('bitrate').value)"></td>
+          <td>Video bitrate (0...25000000), <span class="default">default 17000000</span>:</td>
+          <td><input type="text" size=10 id="bitrate"><input type="button" class="button2"  value="OK" onclick="send_cmd('bi ' + document.getElementById('bitrate').value)"></td>
         </tr>
       </table>
 		  </article>
