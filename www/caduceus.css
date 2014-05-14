@@ -10,9 +10,13 @@ font-family: 'Open Sans', sans-serif;
 font-size: 1.0em;
 margin: 0;
 padding: 0;
-
 }
 
+p{
+color: #fff;
+line-height: 220%;
+font-size: 0.8em;
+}
 
 header {
 width: 100%;
@@ -175,7 +179,6 @@ opacity: 0.6;
 #heading{
 background-color: rgba(0, 0, 0, 0.21);
 padding: 20px;
-width: 734px;
 margin: 0 auto;
 }
 
