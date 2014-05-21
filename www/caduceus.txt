@@ -1,0 +1,4 @@
+body{
+	font-family: helvetica, arial, serif;
+	font-size: 12px;
+}
