@@ -26,24 +26,26 @@
 	</script>
 	
 	</head>
-	<body onload="setTimeout('init();', 100);">
-	
-	<header>
+ 
+  <body>
+
+  	<header>
 		<div class="container clearfix">
 			<h1 id="logo">
 				RPI Surveillance
 			</h1>
 			<nav>
 				<a href="index.html">Stream</a>
-				<a style="color: #ddd;" href="files.php">Files</a>
+				<a href="preview.php">Files</a>
 			</nav>
 		</div>
-	</header><!-- /header -->
-	
-  <div id="wrap">
-  <article>
-  <section>
-    <?php
+	</header>
+ 
+	<div id="wrap">
+	<article>
+
+
+	<?php
       if(isset($_GET["delete"])) {
         unlink("media/" . $_GET["delete"]);
       }
@@ -52,15 +54,15 @@
         foreach($files as $file) unlink("media/$file");
       }
       else if(isset($_GET["file"])) {
-        echo "<h2>Files</h2>";
+        echo "<div class='heading'><h2>Preview</h2></div>";
         if(substr($_GET["file"], -3) == "jpg") echo "<img src='media/" . $_GET["file"] . "' width='640'>";
-        else echo "<video width='780' controls><source src='media/" . $_GET["file"] . "' type='video/mp4'>Your browser does not support the video tag.</video>";
+        else echo "<video width='732' controls><source src='media/" . $_GET["file"] . "' type='video/mp4'>Your browser does not support the video tag.</video>";
         echo "<p><input type='button' value='Download' onclick='window.open(\"download.php?file=" . $_GET["file"] . "\", \"_blank\");'> ";
-        echo "<input type='button' value='Delete' onclick='window.location=\"files.php?delete=" . $_GET["file"] . "\";'></p>";
+        echo "<input type='button' value='Delete' onclick='window.location=\"preview.php?delete=" . $_GET["file"] . "\";'></p>";
       }
     ?>
-	<div id="heading">
-    <h2>Files</h2>
+    <div class="heading">
+	<h2>Files</h2>
 	</div>
     <?php
       $files = scandir("media");
@@ -68,16 +70,15 @@
       else {
         foreach($files as $file) {
           if(($file != '.') && ($file != '..')) {
-            $fsz = round ((filesize("media/" . $file)) / (780 * 780));
-            echo "<p><a href='files.php?file=$file'>$file</a> ($fsz MB)</p>";
+            $fsz = round ((filesize("media/" . $file)) / (1024 * 1024));
+            echo "<p><a href='preview.php?file=$file'>$file</a> ($fsz MB)</p>";
           }
         }
-        echo "<p><input type='button' value='Delete all' onclick='if(confirm(\"Delete all?\")) {window.location=\"files.php?delete_all\";}'></p>";
+        echo "<p><input type='button' value='Delete all' onclick='if(confirm(\"Delete all?\")) {window.location=\"preview.php?delete_all\";}'></p>";
       }
     ?>
-	</section>
-  </article>
-  </div>
-  
-</body>
+	
+	</article>
+	</div>
+  </body>
 </html>

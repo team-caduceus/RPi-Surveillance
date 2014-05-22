@@ -86,7 +86,7 @@ opacity: 0.4;
 
 header.smaller {
 height: 75px;
-background-color: rgba(0, 0, 0, 0.95);
+background-color: rgba(0, 0, 0, 0.9);
 -webkit-transition: all 0.3s;
 -moz-transition: all 0.3s;
 -ms-transition: all 0.3s;
@@ -260,6 +260,14 @@ opacity: 0.6;
 ::selection {color: #fff;background-color: #000;}
 ::-moz-selection {color: #fff;background-color: #000;}
 
+.heading{
+background-color: rgba(0, 0, 0, 0.21);
+padding: 20px;
+margin: 0 auto;
+width: 734px;
+height: 24px;
+}
+
 .set{
 float: left;
 }
@@ -283,14 +291,6 @@ transition: all 300ms ease;
 
 .close-button:hover{
 background-color: rgba(0, 0, 0, 0.45);
-}
-
-#heading{
-background-color: rgba(0, 0, 0, 0.21);
-padding: 20px;
-height: 24px;
-margin: 0 auto;
-width: 734px;
 }
 
 table{

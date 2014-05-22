@@ -25,60 +25,47 @@
 		window.onload = init();
 	</script>
 	
-	<script>
-	$(document).ready(function(){
-		$('.close-button').click(function(){
-			var link = $(this);
-			$('.settings').slideToggle('slow', function() {
-				if ($(this).is(":visible")) {
-					 link.text('close');                
-				} else {
-					 link.text('open');                
-				}        
-			});
-				
-		});
-		
-	});
-	</script>
-	
 	</head>
-	<body onload="setTimeout('init();', 100);">
-	
+ 
+ <body onload="setTimeout('init();', 100);">
+ 
 	<header>
 		<div class="container clearfix">
 			<h1 id="logo">
 				RPI Surveillance
 			</h1>
 			<nav>
-				<a class="color: #ddd;" href="index.html">Stream</a>
-				<a href="files.php">Files</a>
+				<a href="index.html">Stream</a>
+				<a href="preview.php">Files</a>
 			</nav>
 		</div>
-	</header><!-- /header -->
-	
-	  <div id="wrap">
-	  <article>
-      <div><img id="mjpeg_dest"></div>
-      <input id="video_button" type="button" class="button1" >
+	</header>
+ 
+	<div id="wrap">
+	<article>
+      <!-- THIS IS THE STREAM BOX -->
+	  <div><img id="mjpeg_dest"></div>
+      
+	  <input id="video_button" type="button" class="button1" >
       <input id="image_button" type="button" class="button1" >
       <input id="timelapse_button" type="button" class="button1" >
       <input id="md_button" type="button" class="button1" >
       <input id="halt_button" type="button" class="button1" >
 	</article>  
-	
+	  
+	  
 	<article>	
-	<div id="heading">
-		<div class="set">
+	<div class="heading">
+	  <div class="set">
 		<h2>Settings</h2>
 		</div>
 		
 		<div class="close-button">
 		Open
 		</div>
-		
 	</div>
-	<div class="settings" style="display: none;">
+	
+	<div class="settings" style="display: none;">	
 	<table border="0" width="780">
         
 		<tr>
@@ -270,7 +257,24 @@
 		</div>
 		</article>
 
-	</div>
-
-	</body>
-	</html>
+		</div>
+	
+	<script>
+	$(document).ready(function(){
+		$('.close-button').click(function(){
+			var link = $(this);
+			$('.settings').slideToggle('slow', function() {
+				if ($(this).is(":visible")) {
+					 link.text('close');                
+				} else {
+					 link.text('open');                
+				}        
+			});
+				
+		});
+		
+	});
+	</script>
+	
+</body>
+</html>
