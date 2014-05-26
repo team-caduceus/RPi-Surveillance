@@ -225,5 +225,46 @@ padding: 10px;
 border-bottom: 1px dotted #333;
 }
 
+.btn{
+background-color: #333c41;
+border: 0;
+padding-top: 12px;
+padding-bottom: 12px;
+padding-left: 8px;
+padding-right: 8px;
+margin-bottom: 10px;
+width: 200px;
+color: #fff;
+}
+
 ::selection {color: #fff;background-color: #000;}
 ::-moz-selection {color: #fff;background-color: #000;}
+
+#container{
+height: 300px;
+clear: both;
+}
+
+.logobox{
+float: right;
+height: 288px;
+width: 250px;
+background-color: rgba(17, 17, 17, 0.40);
+}
+
+.logoboxwrap{
+padding: 20px;
+text-align: center;
+}
+
+.streambox{
+float: left;
+height: 288px;
+width: 512px;
+background-color: rgba(17, 17, 17, 0.40);
+}
+
+.menu{
+width: 780px;
+margin: 0 auto;
+}
