@@ -4,6 +4,26 @@
   <title>RPi Surveillance</title>
   		<link rel="stylesheet" href="caduceus.css" />
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="classie.js"></script>
+		
+		<script>
+		function init() {
+			window.addEventListener('scroll', function(e){
+				var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+					shrinkOn = 75,
+					header = document.querySelector("header");
+				if (distanceY > shrinkOn) {
+					classie.add(header,"smaller");
+				} else {
+					if (classie.has(header,"smaller")) {
+						classie.remove(header,"smaller");
+					}
+				}
+			});
+		}
+		window.onload = init();
+	</script>
   
   <script src="script.js"></script>
   </head>
@@ -17,6 +37,7 @@
 			<nav>
 				<a href="index.html">Stream</a>
 				<a href="preview.php">Files</a>
+				<a href="info.html">Info</a>
 			</nav>
 		</div>
 	</header>

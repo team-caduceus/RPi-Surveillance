@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+  <html>
+  <head>
+  <title>RPi Surveillance</title>
+  		<link rel="stylesheet" href="caduceus.css" />
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="classie.js"></script>
+		
+		<script>
+		function init() {
+			window.addEventListener('scroll', function(e){
+				var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+					shrinkOn = 75,
+					header = document.querySelector("header");
+				if (distanceY > shrinkOn) {
+					classie.add(header,"smaller");
+				} else {
+					if (classie.has(header,"smaller")) {
+						classie.remove(header,"smaller");
+					}
+				}
+			});
+		}
+		window.onload = init();
+	</script>
+  
+  <script src="script.js"></script>
+  </head>
+  <body onload="setTimeout('init();', 100);">
+
+	<header>
+		<div class="container clearfix">
+			<h1 id="logo">
+				RPI Surveillance
+			</h1>
+			<nav>
+				<a href="index.html">Stream</a>
+				<a href="preview.php">Files</a>
+				<a href="info.html">Info</a>
+			</nav>
+		</div>
+	</header>
+
+	<div id="wrap">
+	<article>
+    <h2>Information</h2>
+	<p>RPi-Surveillance is a web based interface for controlling the Raspberry Pi Camera, includes motion detection, time lapse, and image and video recording.</p>
+	 </article>
+	 
+	<article>
+    <h2>How to install</h2>
+	<p>In order to install the RPi-Surveillance plugin you need to follow some smalls steps below.</p>
+	<ul>
+	<li>1. Install Raspbian on your RPi</li>
+	<li>2. Attach camera to RPi and enable camera support (http://www.raspberrypi.org/camera)</li>
+	<li>3. Update your RPi with the following command</li>
+	</ul>
+	<code>sudo apt-get update</code>
+	<ul>
+	<li>4. Clone the code from github and run the installer with the following commands:</li>
+	 </ul>
+	 <code>git clone https://github.com/team-caduceus/bugfree-wookie.git<br />
+	cd bugfree-wookie<br />
+	chmod u+x bugfree.sh<br />
+	./bugfree.sh install</code>
+	<ul>
+	<li>5. When the setup is finished, restart your RPi. Now just open up any browser on any computer in your network and enter the IP of the RPi as URL.</li>
+	</ul>
+	 </article>
+	 
+	 </div>
+	  
+  </body>
+</html>
