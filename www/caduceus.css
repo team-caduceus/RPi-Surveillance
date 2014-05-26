@@ -213,5 +213,17 @@ h2{
 	font-size: 1.2em;
 }
 
+.file a{
+color: #fff;
+}
+
+.file{
+display: block;
+color: #555;
+width: 760px;
+padding: 10px;
+border-bottom: 1px dotted #333;
+}
+
 ::selection {color: #fff;background-color: #000;}
 ::-moz-selection {color: #fff;background-color: #000;}

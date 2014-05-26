@@ -35,7 +35,7 @@ raw_layer false
 #
 # fps_preview = video_fps (below) / divider
 #
-width 512
+width 780
 quality 25
 divider 1
 
